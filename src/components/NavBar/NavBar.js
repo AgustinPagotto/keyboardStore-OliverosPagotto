@@ -1,13 +1,13 @@
 import React from "react";
-import "./Header.css";
+import styles from './navBar.module.css';
 
-const Header = () => {
+const NavBar = () => {
   return (
     <header>
-      <nav className="navbar">
-        <div className="logo">KeybStore</div>
-        <ul className="nav-links">
-          <div className="menu">
+      <nav className={styles.navbar}>
+        <div className={styles.logo}>KeybStore</div>
+        <ul className={styles.navLinks}>
+          <div className={styles.menu}>
             <li>
               <a href="/">Home</a>
             </li>
@@ -27,4 +27,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default NavBar;
