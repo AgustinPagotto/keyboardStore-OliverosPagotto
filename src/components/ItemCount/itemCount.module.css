@@ -1,0 +1,15 @@
+.cardProduct {
+    @apply py-8 px-8 max-w-sm mx-auto bg-gray-300 rounded-xl shadow-lg space-y-2 mt-3 justify-center items-center;
+  }
+  
+  .button {
+    @apply px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent bg-white;
+  }
+  
+  .countContainer {
+    @apply py-8 px-8 max-w-sm mx-auto bg-white rounded-xl flex items-center space-y-0 space-x-6 justify-center;
+  }
+
+  .buttonContainer {
+    @apply items-center justify-center flex
+  }
