@@ -1,18 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./itemListContainer.module.css";
+import { products } from "../../mock/products";
+import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = (props) => {
+  const [items, setItems] = useState();
+
+  useEffect(() => {
+    const getProducts = new Promise((res, rej) => {
+      setTimeout(() => {
+        res(products);
+      }, 3000);
+    });
+    getProducts
+      .then((data) => {
+        setItems(data);
+      })
+      .catch((err) => {
+        //console.log(err)
+      })
+      .finally(() => {
+        //console.log('Finally')
+      });
+  }, []);
+
   return (
     <div className={styles.cardProduct}>
-      <div className="text-center space-y-2 sm:text-left">
-        <div className="space-y-0.5">
-          <p className="text-lg text-black font-semibold">{props.saludo}</p>
-          <p className="text-slate-500 font-medium">{props.price}</p>
-        </div>
-        <button className={styles.button}>
-          Buy
-        </button>
-      </div>
+      <ItemList items={items} />
     </div>
   );
 };

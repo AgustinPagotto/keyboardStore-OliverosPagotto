@@ -1,5 +1,5 @@
 .cardProduct {
-  @apply flex-1
+  @apply my-10 max-w-lg mx-auto bg-white rounded-xl shadow-lg sm:flex sm:items-center pr-10;
 }
 
 .button {
