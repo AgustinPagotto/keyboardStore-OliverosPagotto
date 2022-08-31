@@ -5,7 +5,7 @@ export const products = [
         price: 200,
         stock: 10,
         category: '65%',
-        description: 'One of the most popular keyboard of the moment',
+        description: 'One of the most popular keyboard of the moment, with an excellent sound and all the keys that you need for everything',
         //img desde internet:
         img: 'https://cdn.shopify.com/s/files/1/0519/1965/0993/products/https_3A_2F_2Fs3-us-west-2.amazonaws.com_2Fsecure.notion-static.com_2F0debedcf-25b6-4d65-badb-9de716b273c3_2F_E5_BE_AE_E4_BF_A1_E5_9B_BE_E7_89_87_20220412172510_2048x2048.jpg?v=1652519134',
         //img desde public:

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import styles from "./itemListContainer.module.css";
+import styles from "./itemDetailContainer.module.css";
 import { products } from "../../mock/products";
-import ItemList from "../ItemList/ItemList";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemListContainer = (props) => {
-  const [items, setItems] = useState();
+  const [product, setProduct] = useState({});
 
   useEffect(() => {
     const getProducts = new Promise((res, rej) => {
@@ -14,19 +14,16 @@ const ItemListContainer = (props) => {
     });
     getProducts
       .then((data) => {
-        setItems(data);
+        setProduct(data.find((prod) => prod.title === "Qk65"));
       })
       .catch((err) => {
-        //console.log(err)
-      })
-      .finally(() => {
-        //console.log('Finally')
+        console.log(err);
       });
   }, []);
 
   return (
     <div className={styles.cardProduct}>
-      <ItemList items={items} />
+      <ItemDetail product={product} />
     </div>
   );
 };

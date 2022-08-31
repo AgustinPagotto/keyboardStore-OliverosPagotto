@@ -18,10 +18,7 @@ const Item = (props) => {
         Stock: {props.stock}
       </div>
       <div className="w-full flex-none text-sm font-medium text-slate-700 mt-2">
-        Categoria: {props.category}
-      </div>
-      <div className="w-full flex-none text-sm font-medium text-slate-700 mt-2">
-        Descripción: {props.description}
+        Category: {props.category}
       </div>
     </div>
     <div className="flex mt-5 space-x-4 mb-6 text-sm font-medium">
