@@ -1,7 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
+import { Link } from "react-router-dom";
 import styles from "./itemDetail.module.css";
+import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = ({ product }) => {
+  const [itemQuantity, setItemQuantity] = useState(0)
+
+  const onAdd =(quantity)=>{
+    setItemQuantity(quantity);
+  }
+
   return (
     <div className={styles.cardProduct}>
       <div className="flex-none w-80 relative">
@@ -28,18 +36,24 @@ const ItemDetail = ({ product }) => {
         </div>
         <div className="flex mt-5 space-x-4 mb-6 text-sm font-medium">
           <div className="flex-auto flex space-x-4 justify-center">
-            <button
+            {/*<button
               className="h-10 px-6 font-semibold rounded-md bg-black text-white"
               type="submit"
             >
               Buy now
             </button>
-            <button
-              className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900"
-              type="button"
-            >
-              Add to Cart
-            </button>
+            */}
+            {itemQuantity>0? <Link to="/cart">
+              <button
+                className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900"
+                type="button"
+              >
+                Go to Cart
+              </button>
+            </Link> 
+            :
+            <ItemCount stock={product.stock} initial={1} onAdd={onAdd}/>
+            }
           </div>
         </div>
       </form>

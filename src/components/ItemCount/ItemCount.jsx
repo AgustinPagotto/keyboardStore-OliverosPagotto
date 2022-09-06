@@ -3,23 +3,18 @@ import styles from "./itemCount.module.css";
 
 const ItemCount = ({stock, initial, onAdd}) => {
     const [count, setCount] = useState(initial);
-    const addNumber=()=>{
-        if(count===stock){
-            return;
-        } else {
-            setCount(count+1);
-        }
-        
+
+    const addNumber=(event)=>{
+      event.preventDefault();
+      count < stock && setCount(count + 1); 
     }
-    const subtractNumber=()=>{
-        if(count===initial){
-            return;
-        } else {
-            setCount(count-1);
-        }
+    const subtractNumber=(event)=>{
+      event.preventDefault();
+      count>initial && setCount(count-1);
     }
+
   return (
-    <div className={styles.cardProduct}>
+    <div>
         <div className={styles.countContainer}>
         <button className={styles.button} onClick={subtractNumber}>
           -
@@ -32,7 +27,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
         </button>
         </div>
         <div className={styles.buttonContainer}>
-        <button className={styles.button} onClick={onAdd}>
+        <button className={styles.button} onClick={()=>onAdd(count)}>
           Agregar al Carrito
         </button>
         </div>
