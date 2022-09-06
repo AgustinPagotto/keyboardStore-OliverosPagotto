@@ -25,9 +25,6 @@ const ItemDetail = ({ product }) => {
           <div className="w-full flex-none text-sm font-medium text-slate-700 mt-2">
             Stock: {product.stock}
           </div>
-          <div className="w-full flex-none text-sm font-medium text-slate-700 mt-2">
-            Category: {product.category}
-          </div>
         </div>
         <div className="flex mt-5 space-x-4 mb-6 text-sm font-medium">
           <div className="flex-auto flex space-x-4 justify-center">
