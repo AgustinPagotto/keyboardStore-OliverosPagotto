@@ -1,18 +1,18 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./itemDetail.module.css";
 import ItemCount from "../ItemCount/ItemCount";
-import { useContext } from 'react';
-import { CartContext } from '../../context/CartContext';
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ product }) => {
   const [itemQuantity, setItemQuantity] = useState(0);
-  const {addItem} = useContext(CartContext);
+  const { addItem } = useContext(CartContext);
 
-  const onAdd =(quantity)=>{
-    addItem(product,quantity);
+  const onAdd = (quantity) => {
+    addItem(product, quantity);
     setItemQuantity(quantity);
-  }
+  };
 
   return (
     <div className={styles.cardProduct}>
@@ -47,17 +47,18 @@ const ItemDetail = ({ product }) => {
               Buy now
             </button>
             */}
-            {itemQuantity>0? <Link to="/cart">
-              <button
-                className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900"
-                type="button"
-              >
-                Go to Cart
-              </button>
-            </Link> 
-            :
-            <ItemCount stock={product.stock} initial={1} onAdd={onAdd}/>
-            }
+            {itemQuantity > 0 ? (
+              <Link to="/cart">
+                <button
+                  className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900"
+                  type="button"
+                >
+                  Terminar mi Compra
+                </button>
+              </Link>
+            ) : (
+              <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
+            )}
           </div>
         </div>
       </form>

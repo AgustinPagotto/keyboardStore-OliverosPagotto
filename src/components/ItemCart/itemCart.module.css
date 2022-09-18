@@ -1,0 +1,7 @@
+.cardProduct {
+  @apply my-10 max-w-5xl mx-auto bg-white rounded-xl shadow-lg sm:flex sm:items-center pr-10;
+}
+
+.icon {
+    @apply h-6 w-6 text-black focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2
+}
