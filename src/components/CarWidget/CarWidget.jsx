@@ -10,7 +10,7 @@ const CarWidget = () => {
   const [length, setLength] = useState(totalQuantity);
   useEffect(() => {
     setLength(totalQuantity())
-  }, [cart])
+  }, [cart, totalQuantity])
   return (
     <Link to="/cart">
       <button className={styles.iconContainer}>
