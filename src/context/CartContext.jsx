@@ -15,7 +15,7 @@ const CartProvider = ({ children }) => {
       : setCart([...cart, { ...item, quantity }]);
   };
 
-  const clear = () => {
+  const clearCart = () => {
     setCart([]);
   };
 
@@ -67,7 +67,7 @@ const CartProvider = ({ children }) => {
     addItem: addItem,
     removeItem: removeItem,
     isInCart: isInCart,
-    clear: clear,
+    clearCart: clearCart,
     totalQuantity: totalQuantity,
     totalPrice: totalPrice,
   };
