@@ -15,6 +15,7 @@ const Form = ({ cart, total, clearCart, handleId, handleGoBack }) => {
   const [email, setEmail] = useState("");
 
   const handleSubmit = (event) => {
+    handleGoBack();
     event.preventDefault();
     const order = {
       buyer: { name: name, lastName: lastName, email: email, phone: phone },
@@ -123,7 +124,7 @@ const Form = ({ cart, total, clearCart, handleId, handleGoBack }) => {
         </button>
         <button
           className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900"
-          type="button"
+          type="submit"
         >
           Finish your Order
         </button>
