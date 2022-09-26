@@ -1,9 +1,7 @@
 import {
   addDoc,
   collection,
-  doc,
   serverTimestamp,
-  updateDoc,
 } from "firebase/firestore";
 import React, { useState } from "react";
 import { db } from "../../firebaseConfig";
@@ -15,7 +13,6 @@ const Form = ({ cart, total, clearCart, handleId, handleGoBack }) => {
   const [email, setEmail] = useState("");
 
   const handleSubmit = (event) => {
-    handleGoBack();
     event.preventDefault();
     const order = {
       buyer: { name: name, lastName: lastName, email: email, phone: phone },
@@ -27,16 +24,11 @@ const Form = ({ cart, total, clearCart, handleId, handleGoBack }) => {
     const ordersCollection = collection(db, "orders");
 
     addDoc(ordersCollection, order).then((res) => {
+      handleGoBack();
       handleId(res.id);
       clearCart();
-      //updateprod();
     });
   };
-
-  //const updateprod = () => {
-  //    const orderDoc = doc(db, 'orders', 'A29yVRkpjasoaRfEo3G5');
-  //    updateDoc(orderDoc, { total: 100 });
-  //};
 
   const handleChangeName = (event) => {
     setName(event.target.value);

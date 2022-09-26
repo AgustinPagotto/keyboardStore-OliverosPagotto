@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
@@ -15,9 +15,9 @@ const Cart = () => {
     setIdCompra(id);
   };
 
-  const handleFinishOrder = () =>{
+  const handleFinishOrder = () => {
     setFinishOrder(!finishOrder);
-  }
+  };
 
   if (finishOrder) {
     return (
@@ -33,8 +33,8 @@ const Cart = () => {
 
   if (idCompra) {
     return (
-      <div className="mt-20 border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto flex flex-col items-center justify-center">
-        <h1> Your order number is: {idCompra}, Thanks! </h1>
+      <div className="mt-20 border border-blue-300 shadow rounded-md p-4 max-w-md w-full mx-auto flex flex-col items-center justify-center">
+        <h1 className="mb-5"> Your order number is: {idCompra}, Thanks! </h1>
         <Link to="/">
           <button
             className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900"
@@ -49,8 +49,8 @@ const Cart = () => {
 
   if (cart.length === 0 && !idCompra)
     return (
-      <div className="mt-20 border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto flex flex-col items-center justify-center">
-        <h1>There's no items in the cart, begin your purchase in: </h1>
+      <div className="mt-20 border border-blue-300 shadow rounded-md p-4 max-w-md w-full mx-auto flex flex-col items-center justify-center">
+        <h1 className="mb-5">There's no items in the cart, begin your purchase in: </h1>
         <Link to="/">
           <button
             className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900"

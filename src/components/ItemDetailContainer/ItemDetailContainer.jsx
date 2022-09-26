@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import styles from "./itemDetailContainer.module.css";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
-import {db} from '../../firebaseConfig';
-import {getDoc, doc, collection} from 'firebase/firestore';
+import { db } from "../../firebaseConfig";
+import { getDoc, doc, collection } from "firebase/firestore";
 
 const ItemListContainer = (props) => {
   const [product, setProduct] = useState({});
@@ -12,16 +12,16 @@ const ItemListContainer = (props) => {
 
   useEffect(() => {
     setIsLoading(true);
-    const itemCollection = collection(db, 'products');
+    const itemCollection = collection(db, "products");
     const ref = doc(itemCollection, params.id);
     getDoc(ref)
-    .then((res)=>{
-      setProduct({id: res.id, ...res.data()})
-    })
-    .catch((err)=>console.log(err))
-    .finally(()=>{
-      setIsLoading(false);
-    })
+      .then((res) => {
+        setProduct({ id: res.id, ...res.data() });
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
+      });
   }, [params]);
 
   if (isLoading)

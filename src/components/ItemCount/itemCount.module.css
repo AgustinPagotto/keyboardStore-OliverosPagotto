@@ -3,7 +3,7 @@
   }
   
   .button {
-    @apply px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent bg-white;
+    @apply px-4 py-1 text-sm text-teal-500 font-semibold rounded-full border border-teal-200 hover:text-white hover:bg-teal-600 hover:border-transparent bg-white;
   }
   
   .countContainer {

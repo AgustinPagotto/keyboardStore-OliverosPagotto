@@ -40,20 +40,13 @@ const ItemDetail = ({ product }) => {
         </div>
         <div className="flex mt-5 space-x-4 mb-6 text-sm font-medium">
           <div className="flex-auto flex space-x-4 justify-center">
-            {/*<button
-              className="h-10 px-6 font-semibold rounded-md bg-black text-white"
-              type="submit"
-            >
-              Buy now
-            </button>
-            */}
             {itemQuantity > 0 ? (
               <Link to="/cart">
                 <button
                   className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900"
                   type="button"
                 >
-                  Terminar mi Compra
+                  Finish my order
                 </button>
               </Link>
             ) : (

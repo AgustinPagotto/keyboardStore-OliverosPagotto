@@ -11,7 +11,7 @@ const CartProvider = ({ children }) => {
 
   const addItem = (item, quantity) => {
     isInCart(item.id)
-      ? totalQuantitySingleProduct(item,quantity)
+      ? totalQuantitySingleProduct(item, quantity)
       : setCart([...cart, { ...item, quantity }]);
   };
 
@@ -29,7 +29,6 @@ const CartProvider = ({ children }) => {
 
   const isInCart = (id) => cart.some((prod) => prod.id === id);
 
-  //calcular total de unidades para el cart widget
   const totalQuantity = () => {
     console.log(cart);
     let counter = 0;
@@ -39,7 +38,6 @@ const CartProvider = ({ children }) => {
     return counter;
   };
 
-  //calcular total precio del carrito
   const totalPrice = () => {
     let acumulador = 0;
     cart.forEach((prod) => {
@@ -48,19 +46,21 @@ const CartProvider = ({ children }) => {
     return acumulador;
   };
 
-  const totalQuantitySingleProduct = (item,quantity)=>{
-    setCart( cart.map((prod)=>{
-      if (prod.id === item.id){
-        const prodUpdated = {
-          ...prod,
-          quantity: quantity,
+  const totalQuantitySingleProduct = (item, quantity) => {
+    setCart(
+      cart.map((prod) => {
+        if (prod.id === item.id) {
+          const prodUpdated = {
+            ...prod,
+            quantity: quantity,
+          };
+          return prodUpdated;
+        } else {
+          return prod;
         }
-        return prodUpdated;
-      } else {
-        return prod;
-      }
-    }))
-  }
+      })
+    );
+  };
 
   const value = {
     cart: cart,
