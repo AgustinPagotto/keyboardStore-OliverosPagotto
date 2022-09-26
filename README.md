@@ -32,4 +32,6 @@ npm start
 http:/localhost:3000
 ```
 
-## Images of the project and navigation
+## A little presentation of the project
+
+![](https://github.com/AgustinPagotto/keyboardStore-OliverosPagotto/blob/main/Presentation-gif.gif)
