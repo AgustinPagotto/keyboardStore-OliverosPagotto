@@ -56,7 +56,7 @@ const Cart = () => {
             className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900"
             type="button"
           >
-            Return Home
+            Home
           </button>
         </Link>
       </div>
